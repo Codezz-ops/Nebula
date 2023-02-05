@@ -29,8 +29,6 @@
 # Contributing
  
  We welcome contributions to Nebula. If you would like to contribute, please fork the repository, make your changes, and submit a pull request.
-License
 
-# Nebula
-
-  is licensed under the MIT license. See the LICENSE file for details.
+# License
+  Nebula is licensed under the MIT license. See the LICENSE file for details.
