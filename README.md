@@ -4,7 +4,7 @@
   - Nebula is a powerful and user-friendly tool for ethical hacking and security assessments. With its intuitive interface, you can perform various tasks such as URL shortening, hash generation, DNS lookup, URL checking, subnet calculation, IP lookup, whois lookup, port scanning, and hash identification.
 
 # Features
-
+```
     dirb (buster) - Perform website directory busting to uncover hidden files and directories.
     urlshorten (shorten) - Shorten long URLs into a more manageable form.
     hash algorithm (hash) - Generate hash values for various types of data such as text, files, and directories.
@@ -15,20 +15,22 @@
     Whoislookup (whois) - Retrieve information about a domain name such as its owner and contact information.
     Portscanner (netmap) - Scan a network for open ports and services.
     Hashid (hashident) - Identify the type of hash that has been generated.
-
+```
 # Usage
 
   To use Nebula, simply run the shell and type in the desired command along with any arguments. For example:
-  
+```  
     $ buster http://example.com
-  
+```  
   For more information on a specific command, type help followed by the command name. For example:
-    
+```    
     $ buster --help
-
+```
 # Contributing
  
  We welcome contributions to Nebula. If you would like to contribute, please fork the repository, make your changes, and submit a pull request.
+License
 
-# License
+# LICENSE
+
   Nebula is licensed under the MIT license. See the LICENSE file for details.
