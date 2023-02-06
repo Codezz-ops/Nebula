@@ -10,3 +10,4 @@ string
 platform
 dns.resolver
 flask
+threading
