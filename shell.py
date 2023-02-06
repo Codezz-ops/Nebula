@@ -25,13 +25,20 @@ def shell():
             else:
                 host = command.split()[1]
                 try:
-                    ports = [int(port) for port in command.split()[2].split(',')]
+                    port_str = command.split()[2]
+                    if port_str:
+                        ports = [int(port) for port in port_str.split(',')]
+                    else:
+                        ports = None
                 except IndexError:
-                    PortScanner.HelpMenu()
+                    ports = None
                 except ValueError:
                     print("Ports must be numbers.")
                     PortScanner.HelpMenu()
-                PortScanner.scan_ports(host, ports)
+                if ports:
+                    PortScanner.scan_host(host, ports)
+                else:
+                    PortScanner.scan_ports(host)
         elif command.startswith('whois'):
                 if len(command.split()) < 2:
                     WhoisLookup.HelpMenu()
