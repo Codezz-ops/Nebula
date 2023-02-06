@@ -8,6 +8,7 @@ import string
 import platform
 from flask import Flask, redirect
 import dns.resolver
+import threading
 
 #Tor connect
 
@@ -368,6 +369,7 @@ class PortScanner:
         print('')
         print('Options:')
         print('    <host>    Hostname or IP address of the target system')
+        print('    <flags>   Add flags to your scan (e.g. -sV)')
         print('    <ports>   Ports to scan, separated by commas (e.g. 22,80,443)')
         print('    --help    Display this help message and exit')
         print('')
@@ -375,14 +377,24 @@ class PortScanner:
         print('    netmap example.com 22,80,443')
         print('    netmap 192.168.1.1 22,80,443')
 
-    @staticmethod
-    def scan_ports(host, ports):
-        for port in ports:
-            try:
-                s = socket.socket()
-                s.settimeout(0.1)
-                s.connect((host, port))
+    def scan_host(host, port):
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.settimeout(0.1)
+            result = s.connect_ex((host, port))
+            if result == 0:
                 print("Port {} is open".format(port))
-                s.close()
-            except:
-                print("Port {} is closed".format(port))
+            s.close()
+        except:
+            print("Port {} is closed".format(port))
+
+    def scan_ports(host, ports=None):
+        if ports is None:
+            ports = range(1, 65535)
+        threads = []
+        for port in ports:
+            t = threading.Thread(target=PortScanner.scan_host, args=(host, port))
+            threads.append(t)
+            t.start()
+        for t in threads:
+            t.join()
