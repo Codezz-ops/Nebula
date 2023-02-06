@@ -16,6 +16,10 @@ Whoislookup (whois) - Retrieve information about a domain name such as its owner
 Portscanner (netmap) - Scan a network for open ports and services.
 Hashid (hashident) - Identify the type of hash that has been generated.
 ```
+# Installation
+
+To install Nebula, simply run `git clone https://github.com/Codezz-ops/Nebula` then change into the directory with `cd Nebula` and pip install the requirements with `pip3 install -r requirements.txt`  
+
 # Usage
 
 To use Nebula, simply run the shell and type in the desired command along with any arguments. For example:
