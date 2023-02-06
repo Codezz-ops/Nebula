@@ -1,13 +1,4 @@
 requests
-sys
-socket
-os
 ipaddress
-hashlib
-time
-random
-string
-platform
 dns.resolver
 flask
-threading
