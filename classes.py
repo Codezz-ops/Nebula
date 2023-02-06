@@ -10,8 +10,6 @@ from flask import Flask, redirect
 import dns.resolver
 import threading
 
-#Tor connect
-
 class URLshortener:
     def __init__(self):
         self.url_mapping = {}
