@@ -17,15 +17,15 @@ class URLshortener:
 
     @staticmethod
     def HelpMenu():
-        print('Usage: shorten <long_url>')
-        print('       shorten --help')
+        print('Usage: URLshort <long_url>')
+        print('       URLshort --help')
         print('')
         print('Options:')
         print('    <long_url>    URL to shorten')
         print('    --help        Display this help message and exit')
         print('')
         print('Examples:')
-        print('    shorten "https://www.example.com/long_url"')
+        print('    URLshort "https://www.example.com/long_url"')
         
     def generate_short_url(self, long_url):
         hash_object = hashlib.sha224(long_url.encode())
@@ -109,15 +109,15 @@ class DirBuster:
 class DNSlookup:
     @staticmethod
     def HelpMenu():
-        print('Usage: DNSlookup <url>')
-        print('       DNSlookup --help')
+        print('Usage: DNS <url>')
+        print('       DNS --help')
         print('')
         print('Options:')
         print('    <url>    URL of target link to scan')
         print('    --help    Display this help message and exit')
         print('')
         print('Examples:')
-        print('    DNSlookup google.com')
+        print('    DNS google.com')
 
     @staticmethod
     def DNSlookup(url):
@@ -209,11 +209,11 @@ class HelpMenu:
     Nebula Interactive Hacking Shell Help Menu
 
 Commands:
-    netclac: Subnet Calculator
-        Usage: netclac [IP address] [Subnet Mask]
+    Subnet: Subnet Calculator
+        Usage: Subnet [IP address] [Subnet Mask]
 
-    iplookup: IP Lookup
-        Usage: iplookup [IP address]
+    IP: IP Lookup
+        Usage: IP [IP address]
 
     hashident: Hash Identifier
         Usage: hashident [Hash value]
@@ -221,17 +221,17 @@ Commands:
     whois: Whois Lookup
         Usage: whois [Domain name] or [IP address]
 
-    netmap: Port Scanner
-        Usage: netmap [IP address]
+    nscan: Port Scanner
+        Usage: nscan [IP address]
 
     URLcheck: URL Checker
         Usage: URLcheck [URL]
 
-    generate: Password Generator
+    passgen: Password Generator
         Usage: generate [Length of password (16)]
         
-    DNSlookup: DNS lookup
-        usage: DNSlookup [URL]
+    DNS: DNS lookup
+        usage: DNS [URL]
         
     buster: buster
         usage: buster [URL]
@@ -242,8 +242,8 @@ Commands:
 class SubnetCalculator:
     @staticmethod
     def HelpMenu():
-        print('Usage: netcalc <host> <submask>')
-        print('       netcalc --help')
+        print('Usage: Subnet <host> <submask>')
+        print('       Subnet --help')
         print('')
         print('Options:')
         print('    <host>    Hostname or IP address of the target system')
@@ -251,7 +251,7 @@ class SubnetCalculator:
         print('    --help    Display this help message and exit')
         print('')
         print('Examples:')
-        print('    netcalc 1.1.1.1 16')
+        print('    Subnet 1.1.1.1 16')
     
     def subnet_calculator(ip_address, subnet_mask):
         ip_network = ipaddress.ip_network(f"{ip_address}/{subnet_mask}", strict=False)
@@ -269,14 +269,14 @@ class SubnetCalculator:
 class IPLookup:
     @staticmethod
     def HelpMenu():
-        print('Usage: iplookup <ip>')
-        print('       iplookup --help')
+        print('Usage: IP <ip>')
+        print('       IP --help')
         print('')
         print('Options:')
         print('    --help    Display this help message and exit')
         print('')
         print('Examples:')
-        print('    iplookup 1.1.1.1')
+        print('    IP 1.1.1.1')
 
     @staticmethod
     def ip_lookup(ip_address):
@@ -318,7 +318,7 @@ class WhoisLookup:
     @staticmethod
     def HelpMenu():
         print('Usage: whois <host>')
-        print('       netmap --help')
+        print('       whois --help')
         print('')
         print('Options:')
         print('    <host>    Hostname or IP address of the target system')
@@ -362,8 +362,8 @@ class WhoisLookup:
 class PortScanner:
     @staticmethod
     def HelpMenu():
-        print('Usage: netmap <host> <ports>')
-        print('       netmap --help')
+        print('Usage: nscan <host> <ports>')
+        print('       nscan --help')
         print('')
         print('Options:')
         print('    <host>    Hostname or IP address of the target system')
@@ -372,8 +372,8 @@ class PortScanner:
         print('    --help    Display this help message and exit')
         print('')
         print('Examples:')
-        print('    netmap example.com 22,80,443')
-        print('    netmap 192.168.1.1 22,80,443')
+        print('    nscan example.com 22,80,443')
+        print('    scan 192.168.1.1 22,80,443')
 
     def scan_host(host, port):
         try:
