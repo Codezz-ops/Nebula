@@ -107,7 +107,7 @@ def shell():
                 Tools.DNSlookup.HelpMenu()
             else:
                 url = command.split()[1]
-                Tools.DNSlookup.DNSlookup(url)
+                Tools.DNSlookup.lookup(url)
 
         elif command.startswith("buster"):
             if len(command.split()) < 2:
