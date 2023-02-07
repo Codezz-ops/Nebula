@@ -169,16 +169,15 @@ class Tools:
             print('Examples:')
             print('    DNS google.com')
 
-class DNSlookup:
-    @staticmethod
-    def lookup(url):
-        records = ['A', 'AAAA', 'NS', 'MX', 'SOA', 'TXT']
-        for record in records:
-            try:
-                result = socket.getaddrinfo(url, None, socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, socket.AI_CANONNAME)
-                print(f'{record} record: {result[0][4][0]}')
-            except:
-                print(f'No {record} record found for {url}')
+        @staticmethod
+        def lookup(url):
+            records = ['A', 'AAAA', 'NS', 'MX', 'SOA', 'TXT']
+            for record in records:
+                try:
+                    result = socket.getaddrinfo(url, None, socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, socket.AI_CANONNAME)
+                    print(f'{record} record: {result[0][4][0]}')
+                except:
+                    print(f'No {record} record found for {url}')
 
     class URLcheck:
         @staticmethod
