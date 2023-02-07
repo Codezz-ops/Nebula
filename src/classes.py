@@ -3,11 +3,11 @@ import ipaddress
 import socket
 import hashlib
 import time
+import socket
 import random
 import string
 import platform
 from flask import Flask, redirect
-import dns.resolver
 import threading
 
 class System:
@@ -169,26 +169,16 @@ class Tools:
             print('Examples:')
             print('    DNS google.com')
 
-        @staticmethod
-        def DNSlookup(url):
-            Arecord = dns.resolver.query(url, 'A')
-            AAAArecord = dns.resolver.query(url, 'AAAA')
-            NSrecord = dns.resolver.query(url, 'NS')
-            MXrecord = dns.resolver.query(url, 'MX')
-            SOArecord = dns.resolver.query(url, 'SOA')
-            TXTrecord = dns.resolver.query(url, 'TXT')
-            for val in Arecord:
-                print('A record: ', val.to_text())
-            for val in AAAArecord:
-                print('AAAA record: ', val.to_text())
-            for val in NSrecord:
-                print('NS Record : ', val.to_text())
-            for val in MXrecord:
-                print('MX Record : ', val.to_text())
-            for val in SOArecord:
-                print('SOA Record : ', val.to_text())
-            for val in TXTrecord:
-                print('TXT Record : ', val.to_text())
+class DNSlookup:
+    @staticmethod
+    def lookup(url):
+        records = ['A', 'AAAA', 'NS', 'MX', 'SOA', 'TXT']
+        for record in records:
+            try:
+                result = socket.getaddrinfo(url, None, socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, socket.AI_CANONNAME)
+                print(f'{record} record: {result[0][4][0]}')
+            except:
+                print(f'No {record} record found for {url}')
 
     class URLcheck:
         @staticmethod
