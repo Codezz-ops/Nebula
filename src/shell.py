@@ -1,7 +1,7 @@
 import os
 import sys
 import time
-from src.classes import *
+from classes import *
 
 def Operating_System():
     if os.name != 'posix':
@@ -17,7 +17,7 @@ def shell():
         command = input('$ ')
         if command == 'exit':
             exit()
-        elif command.startswith('netmap'):
+        elif command.startswith('nscan'):
             if len(command.split()) < 2:
                 PortScanner.HelpMenu()
             elif command.split()[1] == '--help':
@@ -57,7 +57,7 @@ def shell():
                 print(Hashid.hash_identifier(hash_input))
         elif command == 'uname -f':
             Defaults.Uname()
-        elif command.startswith('iplookup'):
+        elif command.startswith('IP'):
             if len(command.split()) < 2:
                 IPLookup.HelpMenu()
             elif command.split()[1] == '--help':
@@ -69,7 +69,7 @@ def shell():
                 print(f"ISP: {data['org']}")
                 print(f"Location: {data['loc']}")
                 print(f"Postal Code: {data['postal']}")
-        elif command.startswith('netcalc'):
+        elif command.startswith('Subnet'):
             if len(command.split()) < 2:
                 SubnetCalculator.HelpMenu()
             elif command.split()[1] == '--help':
@@ -78,7 +78,7 @@ def shell():
                 ip_address = command.split()[1]
                 subnet_mask = command.split()[2]
                 print(SubnetCalculator.subnet_calculator(ip_address, subnet_mask))
-        elif command == 'generate':
+        elif command == 'passgen':
             print('Password: ' + Defaults.generate_password(16))
         elif command.startswith('URLcheck'):
             if len(command.split()) < 2:
@@ -90,7 +90,7 @@ def shell():
                 URLcheck.url_checker(url)
         elif command == 'help':
             HelpMenu.MainHelp()
-        elif command.startswith('DNSlookup'):
+        elif command.startswith('DNS'):
             if len(command.split()) < 2:
                 DNSlookup.HelpMenu()
             elif command.split()[1] == '--help':
@@ -116,7 +116,7 @@ def shell():
                 string = command.split()[1]
                 algorithm = command.split()[2]
                 print(Hashes.hash_string(string, algorithm))
-        elif command.startswith('shorten'):
+        elif command.startswith('URLshort'):
             if len(command.split()) < 2:
                 URLshortener.HelpMenu()
             elif command.split()[1] == '--help':
