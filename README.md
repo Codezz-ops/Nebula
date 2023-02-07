@@ -15,6 +15,7 @@ IPlookup (IP) - Look up information about an IP address such as its location and
 Whoislookup (whois) - Retrieve information about a domain name such as its owner and contact information.
 Portscanner (nscan) - Scan a network for open ports and services.
 Hashid (hashident) - Identify the type of hash that has been generated.
+Uname (uname -f) - Shows all OS info.
 ```
 # Installation
 
