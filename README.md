@@ -6,14 +6,14 @@
 # Features
 ```
 dirb (buster) - Perform website directory busting to uncover hidden files and directories.
-urlshorten (shorten) - Shorten long URLs into a more manageable form.
+urlshorten (URLshort) - Shorten long URLs into a more manageable form.
 hash algorithm (hash) - Generate hash values for various types of data such as text, files, and directories.
-DNSlookup (DNSlookup) - Resolve domain names into IP addresses and vice versa.
+DNSlookup (DNS) - Resolve domain names into IP addresses and vice versa.
 URLchecker (URLcheck) - Check the availability of a website and its response time.
-Subnet calculator (netcalc) - Calculate subnets and determine the number of host addresses in a network.
-IPlookup (iplookup) - Look up information about an IP address such as its location and service provider.
+Subnet calculator (Subnet) - Calculate subnets and determine the number of host addresses in a network.
+IPlookup (IP) - Look up information about an IP address such as its location and service provider.
 Whoislookup (whois) - Retrieve information about a domain name such as its owner and contact information.
-Portscanner (netmap) - Scan a network for open ports and services.
+Portscanner (nscan) - Scan a network for open ports and services.
 Hashid (hashident) - Identify the type of hash that has been generated.
 ```
 # Installation
